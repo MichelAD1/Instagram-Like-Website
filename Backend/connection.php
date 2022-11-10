@@ -1,3 +1,3 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "instagram-like-website");
+$conn = new mysqli("localhost", "root", "", "instagram-like-websitedb");
 ?>
