@@ -4,8 +4,8 @@ include("connection.php");
 $username=$_POST['username'];
 $full_name=$_POST['full_name'];
 $password=$_POST['password'];
+$password=hash('sha256',$password);
 $bio=$_POST['bio'];
-
 $target="profile-pic/".basename($_FILES['image']['name']);
 $profile_picture=$_FILES['profile_picture']['name'];
 
