@@ -5,7 +5,9 @@ $username=$_POST['username'];
 $fullname=$_POST['fullname'];
 $password=$_POST['password'];
 $bio=$_POST['bio'];
-$profile_picture=$_POST['profile_picture'];
+
+$target="profile-pic/".basename($_FILES['image']['name']);
+$profile_picture=$_FILES['profile_picture']['name'];
 
 $stmt= $conn->prepare("SELECT COUNT(*) from users WHERE username=?");
 $response = [];
