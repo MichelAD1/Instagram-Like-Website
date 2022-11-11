@@ -44,6 +44,7 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `posted_by` int(11) NOT NULL,
   `post_image` varchar(255) NOT NULL,
+  `caption` varchar(255) NOT NULL,
   `date_and_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
