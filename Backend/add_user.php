@@ -2,7 +2,7 @@
 include("connection.php");
 
 $username=$_POST['username'];
-$fullname=$_POST['fullname'];
+$full_name=$_POST['full_name'];
 $password=$_POST['password'];
 $bio=$_POST['bio'];
 
@@ -24,9 +24,9 @@ if($conn->connect_error){
     $stmt->fetch();
     
     if($result==0){
-        $stmt=$conn->prepare("insert into users(username,fullname,password,bio,profile_picture)
+        $stmt=$conn->prepare("insert into users(username,full_name,password,bio,profile_picture)
         values(?,?,?,?,?)");
-        $stmt->bind_param("sssss",$username,$fullname,$password,$bio,$profile_picture);
+        $stmt->bind_param("sssss",$username,$full_name,$password,$bio,$profile_picture);
         $stmt->execute();
         $response["User inserted"] = true;   
         echo json_encode($response);
