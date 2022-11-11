@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
   `commented_by` int(11) NOT NULL,
+  `commented_on` int(11) NOT NULL,
   `content` text NOT NULL,
   `date_and_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -61,18 +62,6 @@ CREATE TABLE `users` (
   `password` varchar(1000) NOT NULL,
   `bio` text NOT NULL,
   `profile_picture` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_commented_on_post`
---
-
-CREATE TABLE `user_commented_on_post` (
-  `user_id` int(11) NOT NULL,
-  `comment_id` int(11) NOT NULL,
-  `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
