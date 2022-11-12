@@ -19,6 +19,21 @@ if($conn->connect_error){
         $response["Post removed"] = false;   
         echo json_encode($response);
     }else{
+        $stmt= $conn->prepare("DELETE FROM posts WHERE posts.posted_by=? and posts.id=?;");
+        $stmt->bind_param("ii",$user_id,$post_id);
+        $stmt->execute();
+        $stmt->store_result();
+
+        $stmt= $conn->prepare("DELETE FROM comments WHERE comments.commented_on=?;");
+        $stmt->bind_param("i",$post_id);
+        $stmt->execute();
+        $stmt->store_result();
+
+        $stmt= $conn->prepare("DELETE FROM user_liked_post WHERE user_liked_post.post_id=?;");
+        $stmt->bind_param("i",$post_id);
+        $stmt->execute();
+        $stmt->store_result();
+        
         $response["Post removed"]=true;
         echo json_encode($response);
     }
