@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
     <title>Instagram</title>
 </head>
-
 <body>
     <div class="login-card-container">
         <div class="login-card">
@@ -20,15 +19,15 @@
             <div class="login-card-header">
                 <h1>Sign In</h1>
             </div>
-            <form class="login-card-form">
+            <form class="login-card-form" action="../Backend/check_user.php" method="post">
                 <div class="form-item">
-                    <span class="form-item-icon material-symbols-rounded">mail</span>
-                    <input type="text" placeholder="Enter Email" id="emailForm" 
+                    <span class="form-item-icon material-symbols-rounded">person</span>
+                    <input type="text" placeholder="Enter Username" name="username" id="usernameForm" 
                     autofocus required>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">lock</span>
-                    <input type="password" placeholder="Enter Password" id="passwordForm"
+                    <input type="password" placeholder="Enter Password" name="password" id="passwordForm"
                      required>
                 </div>
                 <div class="form-item-other">
