@@ -59,7 +59,7 @@
       <div class="right-middle">
      <div class="featured">
         <div class="featured-header">
-        <h2 class="featured-stories"> Latest Feed</h2>
+        <h2 class="featured-stories"> My Posts</h2>
          <div class="icon-two">
         <div class="icon3"></div>
         </div>
@@ -75,6 +75,11 @@
                     <a href="../Frontend/view_comments.php" class="after">View all 180 comments...</a>
                     <div class="comment-icon">
                     <span class="material-symbols-outlined">chat</span>
+                    <br/>
+                    <a href="../Backend/delete_post.php" class="afterafter">Delete Post</a>
+                    </div>
+                    <div class="delete-icon">
+                    <span class="material-symbols-outlined">delete</span>
                     
                     </div>
                         </div>
