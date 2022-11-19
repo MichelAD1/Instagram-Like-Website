@@ -113,7 +113,7 @@ body {
 /* Login Card Form Elements */
 .login-card input[type="text"],
 .login-card input[type="password"],
-.login-card input[type="username"] {
+.login-card input[type="file"] {
     border: none;
     outline: none;
     background: rgba(255, 255, 255, .3);
