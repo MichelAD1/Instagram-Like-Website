@@ -40,6 +40,10 @@
           <span class="material-symbols-outlined">settings</span>
             <a href="../Frontend/edit_profile.php" class="feed-writing">Edit Profile</a>
           </div>
+          <div class="icons">
+          <span class="material-symbols-outlined">manage_accounts</span>
+            <a href="../Frontend/my_profile.php" class="feed-writing">My Profile</a>
+          </div>
         </div>
       </div>
     </div>
@@ -68,7 +72,7 @@
                     <span id=like class="material-symbols-outlined">favorite</span>
                     <h3>Liked by: 200 users</h3>
                     </div>
-                    <a href="../Frontend/edit_profile.php" class="after">View all 180 comments...</a>
+                    <a href="../Frontend/view_comments.php" class="after">View all 180 comments...</a>
                     <div class="comment-icon">
                     <span id=like class="material-symbols-outlined">chat</span>
                     
