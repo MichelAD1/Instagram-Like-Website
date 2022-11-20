@@ -16,7 +16,7 @@
                 <img src="logos/logo.png" alt="logo">
             </div>
 
-            <div class="login-card-header">
+            <div id="message" class="login-card-header">
                 <h1>Sign In</h1>
             </div>
 
@@ -35,7 +35,7 @@
             </form>
 
             <div class="login-card-footer">
-                Don't have an account? <a href="../Backend/create_account.php">Create a free account.</a>
+                Don't have an account? <a href="../Frontend/create_account.php">Create a free account.</a>
             </div>
         </div>
     </div>
