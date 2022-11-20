@@ -17,40 +17,40 @@
             <div class="login-card-logo">
                 <img src="logos/logo.png" alt="logo">
             </div>
-            <div class="login-card-header">
+            <div id="message" class="login-card-header">
                 <h1>Sign Up</h1>
             </div>
-            <form class="login-card-form" action="../Backend/add_user.php" method="post" enctype="multipart/form-data">
+            <form class="login-card-form" id="signup_form" enctype="multipart/form-data">
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">person</span>
-                    <input type="text" placeholder="Enter Username" name="username" id="usernameForm" 
+                    <input type="text" placeholder="Enter Username" name="username" id="username_form" 
                     autofocus required>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-outlined">account_box</span>
-                    <input type="text" placeholder="Enter Full Name" name="full_name" id="fullnameForm"
+                    <input type="text" placeholder="Enter Full Name" name="full_name" id="fullname_form"
                      autofocus required>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-outlined">badge</span>
-                    <input type="text" placeholder="Enter A Small Introduction About Yourself" name="bio" id="bioForm"
+                    <input type="text" placeholder="Enter A Small Introduction About Yourself" name="bio" id="bio_form"
                      autofocus required>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-outlined">image</span>
                     <label for="formFileMultiple" ></label>
-                    <input type="file" placeholder="Choose your profile picture" name="profile_picture"  accept="image/*" autofocus required>
+                    <input type="file" placeholder="Choose your profile picture" name="profile_picture" id="profile_form" accept="image/*" autofocus required>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">lock</span>
-                    <input type="password" placeholder="Enter Password" name="password" id="passwordForm"
+                    <input type="password" placeholder="Enter Password" name="password" id="password_form"
                      required>
                 </div>
-                <button type="submit">Sign Up</button>
+                <button id="signup_button" type="button" onclick="signupHandler()">Sign Up</button>
             </form>
         </div>
     </div>
-
+    <script src="functions.js" type="text/javascript" ></script>
 </body>
 
 </html>
