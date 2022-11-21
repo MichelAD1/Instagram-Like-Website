@@ -34,8 +34,8 @@ if($conn->connect_error){
         $stmt->bind_param("s",$username);
         $stmt->execute();
         $result = $stmt->get_result();
-        $user = $result->fetch_assoc();
-        $response["User inserted"] = $user["id"];   
+        $user = $result->fetch_array();
+        $response["User inserted"] = $user;   
         echo json_encode($response);
     }else{
         $response["User inserted"] = false;   

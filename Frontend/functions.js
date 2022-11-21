@@ -1,4 +1,4 @@
-let count_incorrects,count_signup=0;
+let count_incorrects=count_signup=0;
 let loginHandler = () => {
     let username = document.getElementById("username_form");
     let password = document.getElementById("password_form");
@@ -49,7 +49,7 @@ let signupHandler = () => {
                 message.appendChild(h1);
             }
         }else{
-            window.location.href="../Frontend/home.php?id="+res[0];
+            window.location.href="../Frontend/home.php?id="+res[0]+"&username="+res[1]+"&fullname="+res[2]+"&bio="+res[4]+"&profile_picture="+res[5];
         }
     }
 
@@ -74,10 +74,15 @@ let homeHandler = () => {
         let username = queryString["username"];
         let profile_picture = queryString["profile_picture"];
         let bio = queryString["bio"];
-        let path="../Backend/profile-pic/"+profile_picture;
+        let profile_pic_path="../Backend/profile-pic/"+profile_picture;
         let fullname = queryString["fullname"];
-        document.getElementById("profile_pic").innerHTML = "<img src="+path+" alt='' style='border-radius: 50%; height:80px; width:80px;margin-left:120px;margin-top:20px;'>";
+        let profile_path="../Frontend/my_profile.php?id="+queryString["id"]+"&username="+username+"&fullname="+encodeURIComponent(fullname.trim())+"&bio="+encodeURIComponent(bio.trim())+"&profile_picture="+profile_picture;
+        document.getElementById("myProfile").innerHTML="<a href="+profile_path+"class='feed-writing'>My Profile</a>";
+        document.getElementById("profile_pic").innerHTML = "<img src="+profile_pic_path+" alt='' style='border-radius: 50%; height:80px; width:80px;margin-left:120px;margin-top:20px;'>";
         document.getElementById("texts_infos").innerHTML="<h2 class='username'>"+username+"</h2><h3 class='username'>"+fullname+"</h3><p class='bio'>"+bio+"</p>";
 }
+let profileHandler = () => {
+}
+
 
 
