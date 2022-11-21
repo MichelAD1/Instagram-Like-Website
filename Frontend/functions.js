@@ -77,9 +77,9 @@ let homeHandler = () => {
         let profile_pic_path="../Backend/profile-pic/"+profile_picture;
         let fullname = queryString["fullname"];
         let profile_path="../Frontend/my_profile.php?id="+queryString["id"]+"&username="+username+"&fullname="+encodeURIComponent(fullname.trim())+"&bio="+encodeURIComponent(bio.trim())+"&profile_picture="+profile_picture;
-        let edit_path="../Frontend/edit_profile.php?id="+queryString["id"];
-        document.getElementById("my_profile").innerHTML="<a href="+profile_path+"class='feed-writing'>My Profile</a>";
-        document.getElementById("edit_profile").innerHTML="<a href="+edit_path+"class='feed-writing'>Edit Profile</a>";
+        let edit_path="../Frontend/edit_profile.php?id="+queryString["id"]+"&profile_picture="+profile_picture;
+        document.getElementById("my_profile").innerHTML="<a href="+profile_path+">My Profile</a>";
+        document.getElementById("edit_profile").innerHTML="<a href="+edit_path+">Edit Profile</a>";
         document.getElementById("profile_pic").innerHTML = "<img src="+profile_pic_path+" alt='' style='border-radius: 50%; height:80px; width:80px;margin-left:120px;margin-top:20px;'>";
         document.getElementById("texts_infos").innerHTML="<h2 class='username'>"+username+"</h2><h3 class='username'>"+fullname+"</h3><p class='bio'>"+bio+"</p>";
 }
@@ -96,10 +96,13 @@ let updateHandler = () => {
             }
         }
     }
+    let profile_picture=queryString["profile_picture"];
     let username = document.getElementById("username_form");
     let full_name = document.getElementById("fullname_form");
     let bio = document.getElementById("bio_form");
-    let profile_picture = document.getElementById("profile_form").files[0].name;
+    if(document.getElementById("profile_form").files[0]){
+        profile_picture = document.getElementById("profile_form").files[0].name;
+    }
     let password = document.getElementById("password_form");
     const xhr = new XMLHttpRequest();
 
