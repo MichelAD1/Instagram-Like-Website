@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title>Instagram</title>
 </head>
-<body>
+<body onload="homeHandler()">
 <div class="container">
   <div class="all flex-row">
     <div class="menu flex-column">
@@ -18,11 +18,13 @@
         <img src="logos/instagram.png" />
         <h3 class="insta-writing">Instagram</h3>
       </div>
-      <div class="profil-img"></div>
-      <div class="profil-info">
-        <h2 class="username">Username</h2>
+      <div id="profile_pic">
+      <img src='../Backend/profile-pic/' alt='' style='border-radius: 50%; height:80px; width:80px;margin-left:120px;margin-top:20px;'>
+      </div>
+      <div id="infos"class="profil-info">
+        <div id="texts_infos"><h2 class="username">Username</h2>
         <h3 class="username">Full Name</h3>
-        <p class="bio">Bio</p>
+        <p class="bio">Bio</p></div>
         <div class="numbers">
           <div class="post">
             <p>Posts</p>
@@ -83,5 +85,6 @@
     </div>
   </div>
 </div>
+<script src="functions.js" type="text/javascript" ></script>
 </body>
 </html>
