@@ -29,7 +29,7 @@
           <div class="icons">
           <span class="material-symbols-outlined">home</span>
             <div class="feed-writing"> 
-            <a href="../Frontend/home.php" class="feed-writing">Feed</a>
+            <a id="home_profile"href="../Frontend/home.php" class="feed-writing">Feed</a>
             </div>
           </div>
           <div class="icons">
