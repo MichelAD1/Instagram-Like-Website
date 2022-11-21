@@ -3,6 +3,7 @@ include("connection.php");
 
 $id=$_POST['id'];
 $response = [];
+$resultt=0;
 
 if($conn->connect_error){
     echo json_encode($response);
@@ -16,7 +17,7 @@ if($conn->connect_error){
         $stmt->store_result();
         $stmt->bind_result($result);  
         $stmt->fetch();
-
+        $resultt=$result;
         if($result==0){
             $stmt = $conn->prepare("UPDATE users SET username=? WHERE id=?");
             $stmt->bind_param("si", $username, $id);
@@ -48,7 +49,7 @@ if($conn->connect_error){
         $stmt->bind_param("si", $profile_picture, $id);
         $stmt->execute();
     }
-    if($result==0){
+    if($resultt==0){
         $stmt=$conn->prepare("SELECT * from users WHERE id=?");
         $stmt->bind_param("i",$id);
         $stmt->execute();
