@@ -47,7 +47,7 @@
   <div class="right-page">
     <div class="top-bar">
       <div class="cover-post">
-        <button class="button post-new"> <a href="../Frontend/create_post.php">Create New Post</a> </button>
+        <button class="button post-new"> <a id="post_img"href="../Frontend/create_post.php">Create New Post</a> </button>
       </div>
     </div>
     <hr class="hr-new">
