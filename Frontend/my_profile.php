@@ -15,7 +15,7 @@
   <div class="all flex-row">
     <div class="menu flex-column">
       <div class="flex-row label-wrapper">
-      <img src="logos/instagram.png" style='height:20px; width:20px;margin-top:10px;'/>
+        <img src="logos/instagram.png" style='height:20px; width:20px;margin-top:10px;'/>
         <h3 style='margin-left:12px; margin-top:-23px'class="insta-writing">Instagram</h3>
       </div>
       <div id="profile_pic">
@@ -29,16 +29,16 @@
           <div class="icons">
           <span class="material-symbols-outlined">home</span>
             <div class="feed-writing"> 
-            <a href="../Frontend/home.php" class="feed-writing">Feed</a>
+            <a id= "home_profile"href="../Frontend/home.php" class="feed-writing">Feed</a>
             </div>
           </div>
           <div class="icons">
           <span class="material-symbols-outlined">settings</span>
-            <a href="../Frontend/edit_profile.php" class="feed-writing">Edit Profile</a>
+            <a id="edit_profile" href="../Frontend/edit_profile.php" class="feed-writing">Edit Profile</a>
           </div>
           <div class="icons">
           <span class="material-symbols-outlined">manage_accounts</span>
-            <a href="../Frontend/my_profile.php" class="feed-writing">My Profile</a>
+          <a id="my_profile" href="../Frontend/my_profile.php" class="feed-writing">My Profile</a>
           </div>
         </div>
       </div>
@@ -84,5 +84,6 @@
     </div>
   </div>
 </div>
+<script src="functions.js" type="text/javascript" ></script>
 </body>
 </html>
