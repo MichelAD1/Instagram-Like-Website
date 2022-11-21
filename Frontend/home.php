@@ -25,12 +25,6 @@
         <div id="texts_infos"><h2 class="username">Username</h2>
         <h3 class="username">Full Name</h3>
         <p class="bio">Bio</p></div>
-        <div class="numbers">
-          <div class="post">
-            <p>Posts</p>
-            <div class="post-num">Post num</div>
-          </div>
-        </div>
         <div class="menu-elements">
           <div class="icons">
           <span class="material-symbols-outlined">home</span>
@@ -44,7 +38,7 @@
           </div>
           <div class="icons">
           <span class="material-symbols-outlined">manage_accounts</span>
-            <a href="../Frontend/my_profile.php" class="feed-writing">My Profile</a>
+            <a id="myProfile"href="../Frontend/my_profile.php" class="feed-writing">My Profile</a>
           </div>
         </div>
       </div>
