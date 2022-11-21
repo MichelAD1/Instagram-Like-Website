@@ -15,8 +15,8 @@
   <div class="all flex-row">
     <div class="menu flex-column">
       <div class="flex-row label-wrapper">
-        <img src="logos/instagram.png" />
-        <h3 class="insta-writing">Instagram</h3>
+      <img src="logos/instagram.png" style='height:20px; width:20px;margin-top:10px;'/>
+        <h3 style='margin-left:12px; margin-top:-23px'class="insta-writing">Instagram</h3>
       </div>
       <div id="profile_pic">
       <img src='../Backend/profile-pic/' alt='' style='border-radius: 50%; height:80px; width:80px;margin-left:120px;margin-top:20px;'>

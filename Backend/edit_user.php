@@ -5,7 +5,6 @@ $id=$_POST['id'];
 $response = [];
 
 if($conn->connect_error){
-    $response["User updated"]=false;
     echo json_encode($response);
     die('Connection Failed : '.$conn->connect_error);
 }else{
@@ -43,15 +42,24 @@ if($conn->connect_error){
         $stmt->bind_param("si", $bio, $id);
         $stmt->execute();
     }
-    if($_FILES['profile_picture']['name']){
-        $target="profile-pic/".basename($_FILES['profile_picture']['name']);
-        $profile_picture=$_FILES['profile_picture']['name'];
+    if($_POST["profile_picture"]){
+        $profile_picture=$_POST['profile_picture'];
         $stmt = $conn->prepare("UPDATE users SET profile_picture=? WHERE id=?");
         $stmt->bind_param("si", $profile_picture, $id);
         $stmt->execute();
     }
-    $response["User updated"]=true;
-    echo json_encode($response);
+    if($result==0){
+        $stmt=$conn->prepare("SELECT * from users WHERE id=?");
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_array();
+        $response["User updated"]=$user;
+        echo json_encode($response);
+    }else{
+        $response["User updated"]=false;
+        echo json_encode($response);
+    }
 }
 $stmt->close();
 $conn->close();
