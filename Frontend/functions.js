@@ -84,7 +84,79 @@ let homeHandler = () => {
         document.getElementById("edit_profile").innerHTML="<a href="+edit_path+">Edit Profile</a>";
         document.getElementById("profile_pic").innerHTML = "<img src="+profile_pic_path+" alt='' style='border-radius: 50%; height:80px; width:80px;margin-left:120px;margin-top:20px;'>";
         document.getElementById("texts_infos").innerHTML="<h2 class='username'>"+username+"</h2><h3 class='username'>"+fullname+"</h3><p class='bio'>"+bio+"</p>";
+        let posts=[];
+        fetch('http://localhost/Instagram-like-website/Backend/list_posts.php', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+         },
+        }).then(response => response.text())
+        .then(text => {
+            posts=JSON.parse(text)["Posts"];
+            for(let i=0;i<posts.length;i++){
+                let post=posts[i];
+                let user="";
+                let likes=0;
+                let comments=0;
+                fetch(`http://localhost/Instagram-like-website/Backend/count_likes.php?post_id=${post["id"]}`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                }).then(response => response.text())
+                .then(text => {
+                    likes=JSON.parse(text)["Likes"];
+                    fetch(`http://localhost/Instagram-like-website/Backend/count_comments.php?post_id=${post["id"]}`, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                        },
+                        }).then(response => response.text())
+                        .then(text => {
+                            comments=JSON.parse(text)["Comments"];
+                            fetch(`http://localhost/Instagram-like-website/Backend/get_user.php?posted_by=${post["posted_by"]}`, {
+                                method: 'GET',
+                                headers: {
+                                    'Accept': 'application/json',
+                                },
+                                }).then(response => response.text())
+                                .then(text => {
+                                    user=JSON.parse(text)["Username"];
+                                    let img=post["post_image"];
+                                    let caption=post["caption"];
+                                    let div = document.createElement('div');
+                                                div.setAttribute('class', 'featured-body');
+                                                div.innerHTML = `<div class="img-galery">
+                                                <img src="../Backend/post-imgs/${img}" style="width:420px;height:570px;" />
+                                                <div class="box">
+                                                <div class="like-icon">
+                                                <span id=like class="material-symbols-outlined">favorite</span>
+                                                <h3>Liked by: ${likes} users</h3>
+                                                </div>
+                                                <div class="user-icon">
+                                                <span class="material-symbols-outlined">person</span>
+                                                <h3>Posted by: ${user}</h3>
+                                                </div>
+                                                <div class="caption-icon">
+                                                <span class="material-symbols-outlined">chat</span>
+                                                <h3>${caption}</h3>
+                                                </div>
+                                                <a href="../Frontend/view_comments.php" class="after">View all ${comments} comments...</a>
+                                                <div class="comment-icon">
+                                                <span class="material-symbols-outlined">group</span>
+                                                
+                                                </div>
+                                                    </div>
+                                            </div>
+                                                `
+
+                                                document.getElementById("posts").appendChild(div);})})})
+                
+            }
+        })
+
 }
+
 
 let updateHandler = () => {
     let queryString = new Array();
@@ -155,4 +227,79 @@ let profileHandler = () => {
     document.getElementById("edit_profile").innerHTML="<a href="+edit_path+">Edit Profile</a>";
     document.getElementById("profile_pic").innerHTML = "<img src="+profile_pic_path+" alt='' style='border-radius: 50%; height:80px; width:80px;margin-left:120px;margin-top:20px;'>";
     document.getElementById("texts_infos").innerHTML="<h2 class='username'>"+username+"</h2><h3 class='username'>"+fullname+"</h3><p class='bio'>"+bio+"</p>";
+    let posts=[];
+        fetch(`http://localhost/Instagram-like-website/Backend/list_myposts.php?id=${queryString["id"]}`, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+         },
+        }).then(response => response.text())
+        .then(text => {
+            posts=JSON.parse(text)["Posts"];
+            for(let i=0;i<posts.length;i++){
+                let post=posts[i];
+                let user="";
+                let likes=0;
+                let comments=0;
+                fetch(`http://localhost/Instagram-like-website/Backend/count_likes.php?post_id=${post["id"]}`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                }).then(response => response.text())
+                .then(text => {
+                    likes=JSON.parse(text)["Likes"];
+                    fetch(`http://localhost/Instagram-like-website/Backend/count_comments.php?post_id=${post["id"]}`, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                        },
+                        }).then(response => response.text())
+                        .then(text => {
+                            comments=JSON.parse(text)["Comments"];
+                            fetch(`http://localhost/Instagram-like-website/Backend/get_user.php?posted_by=${post["posted_by"]}`, {
+                                method: 'GET',
+                                headers: {
+                                    'Accept': 'application/json',
+                                },
+                                }).then(response => response.text())
+                                .then(text => {
+                                    user=JSON.parse(text)["Username"];
+                                    let img=post["post_image"];
+                                    let caption=post["caption"];
+                                    let div = document.createElement('div');
+                                                div.setAttribute('class', 'featured-body');
+                                                div.innerHTML = `<div class="img-galery">
+                                                <img src="../Backend/post-imgs/${img}" style="width:420px;height:570px;" />
+                                                <div class="box">
+                                                <div class="like-icon">
+                                                <span id=like class="material-symbols-outlined">favorite</span>
+                                                <h3>Liked by: ${likes} users</h3>
+                                                </div>
+                                                <div class="user-icon">
+                                                <span class="material-symbols-outlined">person</span>
+                                                <h3>Posted by: ${user}</h3>
+                                                </div>
+                                                <div class="caption-icon">
+                                                <span class="material-symbols-outlined">chat</span>
+                                                <h3>${caption}</h3>
+                                                </div>
+                                                <a href="../Frontend/view_comments.php" class="after">View all ${comments} comments...</a>
+                                                <div class="comment-icon">
+                                                <span class="material-symbols-outlined">group</span>
+                                                </br>
+                                                <a href="../Backend/delete_post.php" class="afterafter">Delete Post</a>
+                                                </div>
+                                                <div class="delete-icon">
+                                                <span class="material-symbols-outlined">delete</span>
+                                                </div>
+                                                    </div>
+                                            </div>
+                                                `
+
+                                                document.getElementById("posts").appendChild(div);})})})
+                
+            }
+        })
 }
+
