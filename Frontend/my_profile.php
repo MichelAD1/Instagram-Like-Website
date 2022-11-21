@@ -60,26 +60,8 @@
         <div class="icon3"></div>
         </div>
         </div>
-        <div class="featured-body">
-                <div class="img-galery">
-                    <img src="https://images.unsplash.com/photo-1426543881949-cbd9a76740a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" />
-                    <div class="box">
-                    <div class="like-icon">
-                    <span id=like class="material-symbols-outlined">favorite</span>
-                    <h3>Liked by: 200 users</h3>
-                    </div>
-                    <a href="../Frontend/view_comments.php" class="after">View all 180 comments...</a>
-                    <div class="comment-icon">
-                    <span class="material-symbols-outlined">chat</span>
-                    <br/>
-                    <a href="../Backend/delete_post.php" class="afterafter">Delete Post</a>
-                    </div>
-                    <div class="delete-icon">
-                    <span class="material-symbols-outlined">delete</span>
-                    
-                    </div>
-                        </div>
-                </div>
+        <div id="posts">
+                
         </div>
     </div>
   </div>

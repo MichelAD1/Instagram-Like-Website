@@ -54,21 +54,39 @@
     background-color: transparent;
 }
 .material-symbols-outlined {
-    color: #ff598b;
+    color: #000000;
     display: flex;
     width: 40px;
     align-items: center; 
     margin-left:5px;
 }
 .box{
-    background-color: #dadada79; width: 300px; height: 200px;
+    background-color: #dadada79; width: 300px; height: 280px;
     border-radius: 50px;
 }
 .like-icon > h3{
     font-family:"Lorem ipsum dolor sit amet";
     color: #0707074c;
-    margin-top: -28px;
-    margin-left: 55px;
+    margin-top: -27px;
+  margin-left: 50px;
+}
+.user-icon{
+  margin-left: 15px;
+}
+.user-icon > h3{
+  font-family:"Lorem ipsum dolor sit amet";
+  color: #0707074c;
+  margin-top: -25px;
+  margin-left: 33px;
+}
+.caption-icon{
+  margin-left: 15px;
+}
+.caption-icon > h3{
+  font-family:"Lorem ipsum dolor sit amet";
+  color: #07070771;
+  margin-top: -27px;
+  margin-left: 33px;
 }
 .box .after{
     font-family:"Lorem ipsum dolor sit amet";
